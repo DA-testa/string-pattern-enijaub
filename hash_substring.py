@@ -13,9 +13,12 @@ def read_input():
     pattern = input().strip()
     text = input().strip()
     if input_type == 'F':
-        with open('input.txt', 'r') as f:
-            # this is the sample return, notice the rstrip function
-            return (f.readline().strip(), f.readline().strip())
+        fileName = input()
+        f = open("./tests/"+fileName,mode="r")
+        # this is the sample return, notice the rstrip function
+        pattern = f.readline().strip()
+        text = f.readline().strip()
+        return pattern, text
     elif input_type == 'I':
         return pattern, text
 
@@ -58,3 +61,4 @@ def hash_func(s, p, x):
 # this part launches the functions
 if __name__ == '__main__':
     print_occurrences(get_occurrences(*read_input()))
+
