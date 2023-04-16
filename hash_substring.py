@@ -3,23 +3,24 @@
 def read_input():
     # this function needs to aquire input both from keyboard and file
     # as before, use capital i (input from keyboard) and capital f (input from file) to choose which input type will follow
-    input_type = input().strip().upper()
-    # after input type choice
-    # read two lines 
-    # first line is pattern 
-    # second line is text in which to look for pattern 
+    iev = input()
+    if "F" in iev:
+        path = './tests/'+'06'
+        with open(path,'r') as f:
+            # after input type choice
+            # read two lines 
+            # first line is pattern 
+            # second line is text in which to look for pattern 
 
-    # return both lines in one return
-    pattern = input().strip()
-    text = input().strip()
-    if input_type == 'F':
-        fileName = input()
-        f = open("./tests/"+fileName,mode="r")
+            # return both lines in one return
+            pattern = f.readline().rstrip()
+            text = f.readline().rstrip()
+            return pattern, text
+    if "I" in iev:
         # this is the sample return, notice the rstrip function
-        pattern = f.readline().rstrip()
-        text = f.readline().rstrip()
-        return pattern, text
-    elif input_type == 'I':
+        pattern = input().rstrip()
+        text = input().strip()
+
         return pattern, text
 
 
