@@ -16,8 +16,8 @@ def read_input():
         fileName = input()
         f = open("./tests/"+fileName,mode="r")
         # this is the sample return, notice the rstrip function
-        pattern = f.readline().strip()
-        text = f.readline().strip()
+        pattern = f.readline().rstrip()
+        text = f.readline().rstrip()
         return pattern, text
     elif input_type == 'I':
         return pattern, text
